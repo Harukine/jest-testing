@@ -5,6 +5,9 @@ async function fetchData() {
 async function fetchDataFail() {
     throw 'error';
 }
+async function fetchThrow() {
+    throw Error('error')
+}
 
 // testing getting data
 test('the data is peanut butter', async () => {
@@ -20,4 +23,14 @@ test('the fetch fails with an error', async () => {
     } catch (e) {
         expect(e).toMatch('error');
     }
+});
+
+// testing resolve
+test('the data is peanut butter', async () => {
+    await expect(fetchData()).resolves.toBe('peanut butter');
+});
+
+// testing reject
+test('the fetch fails with an error', async () => {
+    await expect(fetchThrow()).rejects.toThrow('error');
 });
