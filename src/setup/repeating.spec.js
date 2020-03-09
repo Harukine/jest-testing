@@ -22,6 +22,7 @@ afterEach(() => {
     clearCityDatabase();
 });
 
+// test if database has this city
 test('city database has Vienna', () => {
     expect(isCity('Vienna')).toBeTruthy();
 });
@@ -30,6 +31,7 @@ test('city database has San Juan', () => {
     expect(isCity('San Juan')).toBeTruthy();
 });
 
+// test if database does not have this city
 test('city database does not have Toronto', () => {
     expect(isCity('Toronto')).toBeFalsy();
 });
