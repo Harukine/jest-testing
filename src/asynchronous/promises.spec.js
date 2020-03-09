@@ -23,3 +23,8 @@ test('the fetch fails with an error', () => {
 test('the data is peanut butter', () => {
     return expect(fetchData()).resolves.toBe('peanut butter');
 });
+
+// testing reject
+test('the fetch fails with an error', () => {
+    return expect(fetchDataFail()).rejects.toMatch('error');
+});
